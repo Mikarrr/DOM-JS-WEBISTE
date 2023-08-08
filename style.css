@@ -20,12 +20,18 @@ body {
 .navbar {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  height: 100px;
+  height: 40px;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  transition: background-color 1s ease-in-out;
 }
 
 .navbar img {
-  height: 40px;
+  height: 20px;
   margin-left: 3em;
   opacity: 1;
   transition: opacity 1s ease-in-out;
@@ -33,7 +39,7 @@ body {
 
 .navbar ul {
   display: flex;
-  gap: 50px;
+  gap: 300px;
   list-style-type: none;
   justify-content: center;
 }
@@ -45,7 +51,7 @@ body {
 }
 
 .theme_button {
-  height: 40px;
+  height: 20px;
   width: 80px;
   justify-self: right;
   margin-right: 3em;
@@ -59,13 +65,13 @@ body {
 }
 .hover_effect {
   display: grid;
-  height: 500px;
+  height: 900px;
   justify-content: center;
   align-items: center;
 }
 .hover_effect div {
-  width: 50px;
-  height: 50px;
+  width: 400px;
+  height: 400px;
   transition: width 1s ease-in-out;
   background-color: black;
 }
