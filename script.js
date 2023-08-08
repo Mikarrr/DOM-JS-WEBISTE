@@ -26,9 +26,16 @@ themeButton.addEventListener("click", function () {
       "--background-color",
       newBackgorundColor
     );
-    // Ustawia logo kolor biały
-    document.querySelector(".js-logo").innerHTML = logoWhite;
-    currentColor = newColor;
+
+    // Ustawia logo na pełną przejrzystość (widoczność)
+    document.querySelector(".navbar img").style.opacity = "0"; // Ukryj logo
+
+    setTimeout(() => {
+      // Ustawia logo kolor biały
+      document.querySelector(".js-logo").innerHTML = logoWhite;
+      currentColor = newColor;
+      document.querySelector(".navbar img").style.opacity = "1"; // Pokaż logo
+    }, 1000); // Po upływie 1 sekundy (czas trwania przejścia)
   } else {
     // Jeżeli previousColor nie jest puste, przywraca poprzedni kolor
     document.documentElement.style.setProperty("--color", previousColor);
@@ -36,11 +43,16 @@ themeButton.addEventListener("click", function () {
       "--background-color",
       previousColor
     );
-    // Ustawia logo kolor czarny
-    document.querySelector(".js-logo").innerHTML = logoBlack;
-    currentColor = previousColor;
+    // Ustawia logo na pełną przejrzystość (widoczność)
+    document.querySelector(".navbar img").style.opacity = "0"; // Ukryj logo
+    setTimeout(() => {
+      // Ustawia logo kolor czarny
+      document.querySelector(".js-logo").innerHTML = logoBlack;
+      currentColor = previousColor;
 
-    // Czyści previousColor, aby można było ponownie zmienić kolor za pierwszym razem
-    previousColor = null;
+      // Czyści previousColor, aby można było ponownie zmienić kolor za pierwszym razem
+      previousColor = null;
+      document.querySelector(".navbar img").style.opacity = "1"; // Pokaż logo
+    }, 1000); // Po upływie 1 sekundy (czas trwania przejścia)
   }
 });
