@@ -16,7 +16,7 @@ themeButton.addEventListener("click", function () {
     // Przechowuje obecny kolor jako poprzedni
     previousColor = currentColor;
 
-    // Generuje nowy kolor (możesz użyć dowolnego mechanizmu generowania koloru)
+    // Generuje nowy kolor
     const newColor = "white";
     const newBackgorundColor = "grey";
 
