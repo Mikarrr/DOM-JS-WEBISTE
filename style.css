@@ -37,9 +37,9 @@ body {
   transition: opacity 1s ease-in-out;
 }
 
-.navbar ul {
+.list {
   display: flex;
-  gap: 300px;
+  gap: 50%;
   list-style-type: none;
   justify-content: center;
 }
@@ -63,6 +63,62 @@ body {
   cursor: pointer;
   transition: color, background-color 1s ease-in-out;
 }
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .hamburger {
+    display: block;
+    grid-column: 3;
+    justify-self: right;
+    margin-right: 3em;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: block;
+    padding: 0em;
+    z-index: 999;
+  }
+  .hamburger .line {
+    width: 2em;
+    height: 0.2em;
+    background: var(--color);
+    margin-bottom: 0.3em;
+    transition: 0.5s ease-in-out;
+  }
+
+  .hamburger.active .line:first-child {
+    transform: translateX(5px);
+  }
+
+  .hamburger.active .line:nth-child(2) {
+    transform: translateX(-5px);
+  }
+  .list.active {
+    transform: translate(0%);
+  }
+
+  .list {
+    background-color: var(--background-color);
+    height: 900px;
+    position: absolute;
+    right: 0;
+    top: 0vh;
+    flex-direction: column;
+    text-align: center;
+    transform: translate(100%);
+    transition: 0.9s ease-in-out;
+    width: 100%;
+    gap: 5%;
+  }
+  .theme_button {
+    justify-self: center;
+    margin-right: 0em;
+  }
+}
 .hover_effect {
   display: grid;
   height: 900px;
@@ -72,6 +128,6 @@ body {
 .hover_effect div {
   width: 400px;
   height: 400px;
-  transition: width 1s ease-in-out;
-  background-color: black;
+  background-color: var(--color);
+  transition: all 1s ease-in-out;
 }
