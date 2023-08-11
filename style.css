@@ -29,6 +29,7 @@ body {
   width: 100%;
   background-color: var(--background-color);
   transition: background-color 1s ease-in-out;
+  z-index: 999;
 }
 
 .navbar img {
@@ -117,7 +118,7 @@ body {
     top: 0vh;
     flex-direction: column;
     text-align: center;
-    transform: translateY(100%);
+    transform: translateY(101%);
     transition: 0.5s ease-in-out;
     width: 100%;
     gap: 5%;
@@ -163,5 +164,33 @@ body {
   }
   100% {
     transform: translateY(0) rotate(0);
+  }
+}
+
+.preloader {
+  background: var(--color);
+  height: 100vh;
+  width: 120%;
+  position: fixed;
+  z-index: 1000;
+  transition: all 1s ease-in-out;
+  top: 0;
+  left: 0;
+  animation: loaderAnimation 2.5s ease-in-out;
+  overflow: hidden;
+}
+
+@keyframes loaderAnimation {
+  0% {
+    transform: translateY(0px) rotate(0);
+  }
+  100% {
+    transform: translateY(3000px) rotate(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .preloader {
+    display: none;
   }
 }
