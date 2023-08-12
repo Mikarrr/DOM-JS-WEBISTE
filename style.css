@@ -8,6 +8,7 @@
 :root {
   --color: black;
   --background-color: bisque;
+  --secoundary-color: bisque;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
   width: 100%;
   background-color: var(--background-color);
   transition: background-color 1s ease-in-out;
-  z-index: 999;
+  z-index: 1001;
 }
 
 .navbar img {
@@ -38,7 +39,7 @@ body {
   opacity: 1;
   transition: opacity 1s ease-in-out;
   position: relative;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .list {
@@ -65,7 +66,7 @@ body {
   border: 2px solid var(--color);
   border-radius: 3em;
   cursor: pointer;
-  transition: color, background-color 1s ease-in-out;
+  transition: all 1s ease-in-out;
   z-index: 999;
 }
 
@@ -104,7 +105,7 @@ body {
     height: 0.2em;
     background: var(--color);
     margin-bottom: 0.3em;
-    transition: 0.5s ease-in-out;
+    transition: 1s ease-in-out;
   }
 
   .hamburger.active .line:first-child {
@@ -157,10 +158,11 @@ body {
   align-items: center;
   justify-content: center;
 }
-.hover_effect div p {
-  color: var(--background-color);
-  transition: opacity 0.5s ease-in-out;
+.hover_effect .js-effect p {
+  color: var(--secoundary-color);
+  transition: all 1s ease-in-out;
 }
+
 @keyframes smileAnimation {
   0% {
     transform: translateY(0) rotate(0);
@@ -224,7 +226,7 @@ body {
   z-index: 1000;
 }
 .test {
-  color: white;
+  color: var(--secoundary-color);
   font-size: 30px;
   justify-self: center;
   align-self: center;

@@ -5,7 +5,7 @@ let logoWhite = `<img src="logoW.png" alt="" />`;
 document.querySelector(".js-logo").innerHTML = logoBlack;
 
 let currentColor = getComputedStyle(document.documentElement).getPropertyValue(
-  "--color, --background-color"
+  "--color, --background-color, --secoundary-color"
 );
 
 const themeButton = document.querySelector(".theme_button");
@@ -18,10 +18,15 @@ themeButton.addEventListener("click", function () {
 
     // Generuje nowy kolor
     const newColor = "white";
+    const newColorTxt = "rgb(192, 192, 192)";
     const newBackgorundColor = "rgb(192, 192, 192)";
 
     // Ustawia nowy kolor jako aktualny
     document.documentElement.style.setProperty("--color", newColor);
+    document.documentElement.style.setProperty(
+      "--secoundary-color",
+      newColorTxt
+    );
     document.documentElement.style.setProperty(
       "--background-color",
       newBackgorundColor
@@ -39,6 +44,10 @@ themeButton.addEventListener("click", function () {
   } else {
     // Jeżeli previousColor nie jest puste, przywraca poprzedni kolor
     document.documentElement.style.setProperty("--color", previousColor);
+    document.documentElement.style.setProperty(
+      "--secoundary-color",
+      previousColor
+    );
     document.documentElement.style.setProperty(
       "--background-color",
       previousColor
