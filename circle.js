@@ -14,5 +14,15 @@ face.addEventListener("click", () => {
   document.querySelector(".hover_effect div").style.borderRadius = "0";
   document.querySelector(".hover_effect div").style.cursor = "default";
   document.querySelector(".hover_effect div").style.animation = "none";
+  document.querySelector(".main_content").style.position = "absolute";
+
   text.style.opacity = "0";
+  setTimeout(() => {
+    let projectsHTML = `<p class="test">KONTENT</p>`;
+    document.querySelector(".aaa").innerHTML = projectsHTML;
+    document.querySelector(".test").style.opacity = "0";
+    setTimeout(() => {
+      document.querySelector(".test").style.opacity = "1";
+    }, 300);
+  }, 1000);
 });

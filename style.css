@@ -211,3 +211,23 @@ body {
     display: none;
   }
 }
+.main_content {
+  position: none;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 900px;
+  width: 100%;
+  z-index: 1000;
+}
+.test {
+  color: white;
+  font-size: 30px;
+  justify-self: center;
+  align-self: center;
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
