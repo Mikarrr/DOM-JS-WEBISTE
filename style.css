@@ -37,6 +37,8 @@ body {
   margin-left: 3em;
   opacity: 1;
   transition: opacity 1s ease-in-out;
+  position: relative;
+  z-index: 1000;
 }
 
 .list {
@@ -64,10 +66,16 @@ body {
   border-radius: 3em;
   cursor: pointer;
   transition: color, background-color 1s ease-in-out;
+  z-index: 999;
 }
 
 .hamburger {
   display: none;
+}
+@media (max-width: 700px) {
+  .navbar {
+    height: 100px;
+  }
 }
 @media (max-width: 1400px) {
   .list {
@@ -122,6 +130,7 @@ body {
     transition: 0.5s ease-in-out;
     width: 100%;
     gap: 5%;
+    z-index: 998;
   }
   .theme_button {
     justify-self: center;
@@ -166,26 +175,34 @@ body {
     transform: translateY(0) rotate(0);
   }
 }
-
+@media (max-width: 700px) {
+  .hover_effect {
+    height: 100vh;
+  }
+  .hover_effect div {
+    width: 200px;
+    height: 200px;
+  }
+}
 .preloader {
-  background: var(--color);
+  background: url(bg_loader.png);
   height: 100vh;
-  width: 120%;
+  width: 150%;
   position: fixed;
   z-index: 1000;
   transition: all 1s ease-in-out;
   top: 0;
   left: 0;
-  animation: loaderAnimation 2.5s ease-in-out;
+  animation: loaderAnimation 1.8s ease-in-out;
   overflow: hidden;
 }
 
 @keyframes loaderAnimation {
   0% {
-    transform: translateY(0px) rotate(0);
+    transform: translateX(-300px) rotate(0);
   }
   100% {
-    transform: translateY(3000px) rotate(0);
+    transform: translateX(3000px) rotate(0);
   }
 }
 

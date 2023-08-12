@@ -18,7 +18,7 @@ themeButton.addEventListener("click", function () {
 
     // Generuje nowy kolor
     const newColor = "white";
-    const newBackgorundColor = "grey";
+    const newBackgorundColor = "rgb(192, 192, 192)";
 
     // Ustawia nowy kolor jako aktualny
     document.documentElement.style.setProperty("--color", newColor);
