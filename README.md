@@ -1,3 +1,3 @@
-# theme_button
+# DOM js web
 
-Simple theme button css + js
+DOM js animation, add new own scripts
