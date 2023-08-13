@@ -16,7 +16,7 @@ body {
   font-size: 15px;
   font-family: "Montserrat", sans-serif;
   transition: background-color 1s ease-in-out;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -217,19 +217,40 @@ body {
   position: none;
   top: 0;
   left: 0;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 900px;
+  height: 1000px;
   width: 100%;
   z-index: 1000;
 }
+
 .test {
   color: var(--secoundary-color);
-  font-size: 30px;
+  font-size: 50px;
   justify-self: center;
   align-self: center;
   opacity: 1;
   transition: all 1s ease-in-out;
+  text-align: center;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-top: -3em;
+  box-shadow: inset;
+}
+
+.main_img {
+  background: url(../photos/main_img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  width: 700px;
+  margin-left: 3em;
+  margin-right: 3em;
+  transition: all 1s ease-in-out;
+}
+::-webkit-scrollbar {
+  width: 0em;
 }

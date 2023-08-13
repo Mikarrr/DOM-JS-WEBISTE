@@ -12,26 +12,36 @@ face.addEventListener("mouseleave", () => {
 face.addEventListener("click", () => {
   const variablesHoverEffect = [
     { property: "width", value: "100%" },
-    { property: "height", value: "1000px" },
+    { property: "height", value: "2000px" },
     { property: "borderRadius", value: "0" },
     { property: "cursor", value: "default" },
     { property: "animation", value: "none" },
   ];
+  const variablesMainContent = [
+    { property: "position", value: "absolute" },
+    { property: "display", value: "flex" },
+  ];
 
-  const divElement = document.querySelector(".hover_effect div");
+  const HoverEffectDiv = document.querySelector(".hover_effect div");
+  const MainContentDiv = document.querySelector(".main_content");
 
   variablesHoverEffect.forEach((variable) => {
-    divElement.style[variable.property] = variable.value;
+    HoverEffectDiv.style[variable.property] = variable.value;
   });
 
-  document.querySelector(".main_content").style.position = "absolute";
+  variablesMainContent.forEach((variable) => {
+    MainContentDiv.style[variable.property] = variable.value;
+  });
+
   text.style.opacity = "0";
   setTimeout(() => {
-    let projectsHTML = `<p class="test">KONTENT</p>`;
-    document.querySelector(".aaa").innerHTML = projectsHTML;
+    let projectsHTML = `<div class="main_img"></div> <p class="test">KONTENT</p>  `;
+    document.querySelector(".main_content").innerHTML = projectsHTML;
     document.querySelector(".test").style.opacity = "0";
+    document.querySelector(".main_img").style.opacity = "0";
     setTimeout(() => {
       document.querySelector(".test").style.opacity = "1";
+      document.querySelector(".main_img").style.opacity = "1";
     }, 300);
   }, 1000);
 });
