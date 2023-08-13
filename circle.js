@@ -8,14 +8,23 @@ face.addEventListener("mouseenter", () => {
 face.addEventListener("mouseleave", () => {
   face.style.animationPlayState = "running";
 });
-face.addEventListener("click", () => {
-  document.querySelector(".hover_effect div").style.width = "100%";
-  document.querySelector(".hover_effect div").style.height = "1000px";
-  document.querySelector(".hover_effect div").style.borderRadius = "0";
-  document.querySelector(".hover_effect div").style.cursor = "default";
-  document.querySelector(".hover_effect div").style.animation = "none";
-  document.querySelector(".main_content").style.position = "absolute";
 
+face.addEventListener("click", () => {
+  const variablesHoverEffect = [
+    { property: "width", value: "100%" },
+    { property: "height", value: "1000px" },
+    { property: "borderRadius", value: "0" },
+    { property: "cursor", value: "default" },
+    { property: "animation", value: "none" },
+  ];
+
+  const divElement = document.querySelector(".hover_effect div");
+
+  variablesHoverEffect.forEach((variable) => {
+    divElement.style[variable.property] = variable.value;
+  });
+
+  document.querySelector(".main_content").style.position = "absolute";
   text.style.opacity = "0";
   setTimeout(() => {
     let projectsHTML = `<p class="test">KONTENT</p>`;
