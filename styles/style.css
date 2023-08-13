@@ -187,7 +187,7 @@ body {
   }
 }
 .preloader {
-  background: url(bg_loader.png);
+  background: url(../photos/bg_loader.png);
   height: 100vh;
   width: 150%;
   position: fixed;

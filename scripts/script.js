@@ -1,6 +1,6 @@
 let previousColor = null;
-let logoBlack = `<img src="logo.png" alt="" />`;
-let logoWhite = `<img src="logoW.png" alt="" />`;
+let logoBlack = `<img src="../photos/logo.png" alt="" />`;
+let logoWhite = `<img src="../photos/logoW.png" alt="" />`;
 // Ustawia logo kolor czarny domyślnie
 document.querySelector(".js-logo").innerHTML = logoBlack;
 
