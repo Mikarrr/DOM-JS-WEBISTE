@@ -234,9 +234,9 @@ body {
   background-color: var(--color);
   height: 1000px;
   width: 100%;
-  filter: blur(999px);
+  filter: blur(350px);
   margin-top: -40em;
-  opacity: 0.8;
+  opacity: 0.9;
   transition: all 1s ease-in-out;
 }
 .test {
@@ -254,7 +254,6 @@ body {
   margin-top: -6em;
   z-index: 9999;
 }
-
 .main_img {
   background: url(../photos/main_img.jpg);
   background-position: center;
