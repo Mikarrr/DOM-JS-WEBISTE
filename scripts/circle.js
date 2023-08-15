@@ -11,6 +11,7 @@ face.addEventListener("mouseleave", () => {
 
 face.addEventListener("click", () => {
   document.querySelector(".hover_effect div").style.backgroundImage = "none";
+
   const variablesHoverEffect = [
     { property: "width", value: "100%" },
     { property: "height", value: "2000px" },
