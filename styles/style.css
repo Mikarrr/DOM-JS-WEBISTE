@@ -73,7 +73,10 @@ body {
   transition: all 1s ease-in-out;
   z-index: 999;
 }
-
+.theme_button:hover {
+  background-color: var(--color);
+  color: var(--background-color);
+}
 .hamburger {
   display: none;
 }
@@ -160,11 +163,13 @@ body {
   background-repeat: no-repeat;
   transition: all 1s ease-in-out;
   position: relative;
-  animation: smileAnimation 1.5s ease-in-out infinite;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.hover_effect div:hover {
+  scale: 1.2;
 }
 .hover_effect .js-effect p {
   color: var(--secoundary-color);
@@ -213,7 +218,7 @@ body {
   position: none;
   top: 0;
   left: 0;
-  display: none;
+  display: flex; /*zmian pozniej na none */
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
