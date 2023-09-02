@@ -9,6 +9,7 @@
   --color: black;
   --background-color: rgb(238, 238, 238);
   --secoundary-color: rgb(238, 238, 238);
+  --color-text-sec: rgb(146, 146, 146);
 }
 
 body {
@@ -227,6 +228,12 @@ body {
   width: 100%;
   z-index: 1000;
   transition: all 1s ease-in-out;
+  background-color: black; /* usun później */
+}
+.main_content_intro {
+  display: flex; /*zmian pozniej na none */
+  flex-direction: column;
+  align-items: center;
 }
 .blur {
   background-color: var(--color);
@@ -263,6 +270,76 @@ body {
   margin-right: 3em;
   transition: all 1s ease-in-out;
 }
+
+.main_content_description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10em;
+}
+.description_year {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.description_year hr {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-bottom: 2px solid white;
+  justify-self: center;
+  margin-top: 0.4em;
+  margin-right: 0.5em;
+  transition: all 1s ease-in-out;
+  width: 50px;
+}
+.description_year p {
+  color: white;
+  width: 100%;
+  font-size: 26px;
+  margin-left: 0.5em;
+}
+.description_main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.description_main img,
+.description_main .description {
+  width: 100%;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.description_main .description h2 {
+  color: white;
+  font-size: 35px;
+  line-height: 1.3em;
+  font-weight: 300;
+  margin-bottom: 3em;
+}
+.description_main .description a {
+  color: rgb(146, 146, 146);
+  text-decoration: none;
+  font-size: 26px;
+  position: relative;
+}
+
+.description_main .description a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -0.2em;
+  left: 0;
+
+  background-color: rgb(146, 146, 146);
+  transition: width 0.3s ease-in-out;
+}
+
+.description_main .description a:hover::before {
+  width: 100%;
+}
+
 ::-webkit-scrollbar {
   width: 0em;
 }
