@@ -369,7 +369,7 @@ body {
 }
 
 .main_content_gallery .photos {
-  background-color: blue;
+  background-color: none;
   height: 1000px;
   width: 80%;
   position: absolute;
@@ -386,8 +386,9 @@ body {
   overflow: hidden;
 }
 .js-anim-photos {
-  transition: all 1s ease-in-out;
+  transition: transform 1s ease-in-out;
   transform: none;
+  opacity: none;
 }
 
 /*start footer */
