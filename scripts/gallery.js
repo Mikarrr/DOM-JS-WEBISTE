@@ -1,41 +1,52 @@
-const GalleryList = document.querySelectorAll(".js-gallery-anim li a");
+const galleryItems = document.querySelectorAll(".js-gallery-anim li a");
+const animPhotos = document.querySelector(".js-anim-photos");
+const photosContainer = document.querySelector(".js-photos");
+const gallery = document.querySelectorAll(".js-gallery-anim");
 
-function sliderAnim(element) {
-  element.addEventListener("mouseleave", () => {
-    document.querySelector(".js-anim-photos").style.opacity = "0";
-    setTimeout(() => {
-      document.querySelector(".js-anim-photos").style.transform =
-        "translateX(-4000px)";
-    }, 100);
+function handleMouseLeave() {
+  animPhotos.style.opacity = "0";
+  setTimeout(() => {
+    animPhotos.style.transform = "translateX(-4000px)";
+  }, 100);
 
-    setTimeout(() => {
-      document.querySelector(".js-anim-photos").style.opacity = "1";
-      document.querySelector(".js-anim-photos").style.transform =
-        "translateX(0px)";
-      document.querySelector(".js-photos").style.backgroundColor = "none";
-    }, 700);
-  });
+  setTimeout(() => {
+    animPhotos.style.opacity = "1";
+    animPhotos.style.transform = "translateX(0px)";
+  }, 700);
 }
 
-GalleryList.forEach((sec) => {
-  const action = sec.getAttribute("data-action");
+function handleMouseEnter(action) {
+  switch (action) {
+    case "action1":
+      photosContainer.style.backgroundColor = "blue";
+      photosContainer.style.opacity = "1";
+      animPhotos.style.transform = "translateX(3000px)";
+      break;
+    case "action2":
+      photosContainer.style.backgroundColor = "red";
+      photosContainer.style.opacity = "1";
+      animPhotos.style.transform = "translateX(3000px)";
+      break;
+    case "action3":
+      photosContainer.style.backgroundColor = "green";
+      photosContainer.style.opacity = "1";
+      animPhotos.style.transform = "translateX(3000px)";
+      break;
+    default:
+      handleMouseLeave();
+      break;
+  }
+}
 
-  sec.addEventListener("mouseenter", () => {
-    if (action === "action1") {
-      document.querySelector(".js-photos").style.backgroundColor = "blue";
-      sliderAnim(sec);
-    }
-    if (action === "action2") {
-      document.querySelector(".js-photos").style.backgroundColor = "red";
-      sliderAnim(sec);
-    }
-    if (action === "action3") {
-      document.querySelector(".js-photos").style.backgroundColor = "green";
-      sliderAnim(sec);
-    }
+galleryItems.forEach((item) => {
+  const action = item.getAttribute("data-action");
 
-    document.querySelector(".js-photos").style.opacity = "1";
-    document.querySelector(".js-anim-photos").style.transform =
-      "translateX(3000px)";
+  item.addEventListener("mouseenter", () => {
+    handleMouseEnter(action);
+  });
+});
+gallery.forEach((item) => {
+  item.addEventListener("mouseleave", () => {
+    handleMouseLeave();
   });
 });
