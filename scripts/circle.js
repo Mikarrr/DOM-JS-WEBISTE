@@ -1,14 +1,6 @@
 const face = document.querySelector(".hover_effect div ");
 const text = document.querySelector(".hover_effect div p");
 
-face.addEventListener("mouseenter", () => {
-  face.style.animationPlayState = "paused";
-});
-
-face.addEventListener("mouseleave", () => {
-  face.style.animationPlayState = "running";
-});
-
 face.addEventListener("click", () => {
   document.querySelector(".hover_effect div").style.backgroundImage = "none";
 

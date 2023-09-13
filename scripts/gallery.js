@@ -5,6 +5,7 @@ const gallery = document.querySelectorAll(".js-gallery-anim");
 
 function handleMouseLeave() {
   animPhotos.style.opacity = "0";
+
   setTimeout(() => {
     animPhotos.style.transform = "translateX(-4000px)";
   }, 100);
@@ -18,17 +19,33 @@ function handleMouseLeave() {
 function handleMouseEnter(action) {
   switch (action) {
     case "action1":
-      photosContainer.style.backgroundColor = "blue";
+      photosContainer.style.backgroundImage = "url('../photos/main_img.jpg')";
       photosContainer.style.opacity = "1";
+
       animPhotos.style.transform = "translateX(3000px)";
       break;
     case "action2":
-      photosContainer.style.backgroundColor = "red";
+      photosContainer.style.backgroundImage = "url('../photos/sec_img.jpg')";
       photosContainer.style.opacity = "1";
       animPhotos.style.transform = "translateX(3000px)";
       break;
     case "action3":
-      photosContainer.style.backgroundColor = "green";
+      photosContainer.style.backgroundImage = "url('../photos/th_img.jpg')";
+      photosContainer.style.opacity = "1";
+      animPhotos.style.transform = "translateX(3000px)";
+      break;
+    case "action4":
+      photosContainer.style.backgroundImage = "url('../photos/main_img.jpg')";
+      photosContainer.style.opacity = "1";
+      animPhotos.style.transform = "translateX(3000px)";
+      break;
+    case "action5":
+      photosContainer.style.backgroundImage = "url('../photos/sec_img.jpg')";
+      photosContainer.style.opacity = "1";
+      animPhotos.style.transform = "translateX(3000px)";
+      break;
+    case "action6":
+      photosContainer.style.backgroundImage = "url('../photos/th_img.jpg')";
       photosContainer.style.opacity = "1";
       animPhotos.style.transform = "translateX(3000px)";
       break;
