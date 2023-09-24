@@ -227,7 +227,7 @@ body {
 
   justify-content: flex-start;
   padding-top: 20em;
-  height: 8000px;
+  height: 6000px;
   width: 100%;
   z-index: 1000;
   transition: all 1s ease-in-out;
@@ -476,4 +476,25 @@ body {
 }
 ::-webkit-scrollbar {
   width: 0em;
+}
+
+/*main footer */
+
+footer {
+  display: flex;
+  flex-direction: row;
+  gap: 50%;
+  height: 120px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+}
+footer a {
+  margin-right: 3em;
+  text-decoration: none;
+  color: white;
+}
+footer p {
+  margin-left: 3em;
+  color: white;
 }
