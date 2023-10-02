@@ -24,4 +24,9 @@ const archives = [
     data: "01.10.2023",
     location: "Poznań, Poland",
   },
+  {
+    name: "Eurydyka",
+    data: "01.10.2023",
+    location: "Poznań, Poland",
+  },
 ];

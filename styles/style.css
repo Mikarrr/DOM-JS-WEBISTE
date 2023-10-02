@@ -307,11 +307,18 @@ body {
   flex-direction: row;
   align-items: center;
 }
-.description_main img,
+
 .description_main .description {
   width: 100%;
   padding-left: 5em;
   padding-right: 5em;
+}
+.description_main .img_anim_gif {
+  width: 100%;
+  padding-left: 5em;
+}
+.img_anim_gif img {
+  width: 90%;
 }
 .description_main .description h2 {
   color: white;
