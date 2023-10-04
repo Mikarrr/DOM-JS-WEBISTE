@@ -1,32 +1,32 @@
 const archives = [
   {
-    name: "Eurydyka",
+    name: "Luxify",
     data: "28.10.2023",
-    location: "Wuzhen, Chiny",
+    location: "Tokio, Japan",
   },
   {
-    name: "Makbet",
+    name: "Opulence",
     data: "31.10.2023",
-    location: "Poznań, Poland",
+    location: "California, USA",
   },
   {
-    name: "Kaspar",
+    name: "Elysian",
     data: "13.09.2023",
-    location: "Poznań, Poland",
+    location: "Paris, France",
   },
   {
-    name: "Makbet",
+    name: "Luminuxe",
     data: "15.10.2023",
-    location: "Wrocław, Poland",
+    location: "Warsaw, Poland",
   },
   {
-    name: "Eurydyka",
+    name: "Grandioso",
     data: "01.10.2023",
-    location: "Poznań, Poland",
+    location: "Oslo, Norway",
   },
   {
-    name: "Eurydyka",
+    name: "Opuluxe",
     data: "01.10.2023",
-    location: "Poznań, Poland",
+    location: "Hamburg, Deutschland",
   },
 ];
