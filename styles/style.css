@@ -227,7 +227,7 @@ body {
 
   justify-content: flex-start;
   padding-top: 4em;
-  height: 6300px;
+  height: 6400px;
   width: 100%;
   z-index: 1000;
   transition: all 1s ease-in-out;
@@ -247,7 +247,8 @@ body {
   opacity: 0.9;
   transition: all 1s ease-in-out;
 }
-.test {
+
+.main_text {
   color: var(--secoundary-color);
   font-size: 140px;
   line-height: 100%;
@@ -255,12 +256,16 @@ body {
   align-self: center;
   opacity: 1;
   font-family: voyage, sans-serif;
-  transition: all 1s ease-in-out;
+  transition: color 1s ease-in-out;
   text-align: center;
   margin-left: 1.5em;
   margin-right: 1.5em;
   margin-top: -4em;
-  z-index: 9999;
+  z-index: 9998;
+}
+.main_text p {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
 }
 .main_img {
   background: url(../photos/main_img.jpg);
@@ -429,7 +434,7 @@ body {
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 300px; /* Wysokość kontenera */
+  height: 700px; /* Wysokość kontenera */
   background-color: rgb(238, 238, 238);
   padding-bottom: 10em;
 }
