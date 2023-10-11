@@ -3,6 +3,32 @@ const animPhotos = document.querySelector(".js-anim-photos");
 const photosContainer = document.querySelector(".js-photos");
 const gallery = document.querySelectorAll(".js-gallery-anim");
 
+const imagePaths = {
+  action1: "../photos/main_img.jpg",
+  action2: "../photos/sec_img.jpg",
+  action3: "../photos/th_img.jpg",
+  action4: "../photos/main_img.jpg",
+  action5: "../photos/sec_img.jpg",
+  action6: "../photos/th_img.jpg",
+};
+
+function setGalleryImage(imageUrl, transformValue) {
+  photosContainer.style.backgroundImage = `url(${imageUrl})`;
+  setTimeout(() => {
+    photosContainer.style.opacity = "1";
+    animPhotos.style.transform = transformValue;
+  }, 100);
+}
+
+function handleMouseEnter(action) {
+  const imageUrl = imagePaths[action];
+  if (imageUrl) {
+    setGalleryImage(imageUrl, "translateX(3000px)");
+  } else {
+    handleMouseLeave();
+  }
+}
+
 function handleMouseLeave() {
   animPhotos.style.opacity = "0";
 
@@ -16,80 +42,33 @@ function handleMouseLeave() {
   }, 700);
 }
 
-function handleMouseEnter(action) {
-  switch (action) {
-    case "action1":
-      photosContainer.style.backgroundImage = "url('../photos/main_img.jpg')";
-      setTimeout(() => {
-        photosContainer.style.opacity = "1";
-        animPhotos.style.transform = "translateX(3000px)";
-      }, 100);
-      break;
-    case "action2":
-      photosContainer.style.backgroundImage = "url('../photos/sec_img.jpg')";
-      setTimeout(() => {
-        photosContainer.style.opacity = "1";
-        animPhotos.style.transform = "translateX(3000px)";
-      }, 100);
-      break;
-    case "action3":
-      photosContainer.style.backgroundImage = "url('../photos/th_img.jpg')";
-      setTimeout(() => {
-        photosContainer.style.opacity = "1";
-        animPhotos.style.transform = "translateX(3000px)";
-      }, 100);
-      break;
-    case "action4":
-      photosContainer.style.backgroundImage = "url('../photos/main_img.jpg')";
-      setTimeout(() => {
-        photosContainer.style.opacity = "1";
-        animPhotos.style.transform = "translateX(3000px)";
-      }, 100);
-      break;
-    case "action5":
-      photosContainer.style.backgroundImage = "url('../photos/sec_img.jpg')";
-      setTimeout(() => {
-        photosContainer.style.opacity = "1";
-        animPhotos.style.transform = "translateX(3000px)";
-      }, 100);
-      break;
-    case "action6":
-      photosContainer.style.backgroundImage = "url('../photos/th_img.jpg')";
-      setTimeout(() => {
-        photosContainer.style.opacity = "1";
-        animPhotos.style.transform = "translateX(3000px)";
-      }, 100);
-      break;
-    default:
-      handleMouseLeave();
-      break;
-  }
+function resetGalleryItemOpacity() {
+  galleryItems.forEach((item) => {
+    item.style.opacity = "1";
+  });
+}
+function setGalleryItemOpacity(exceptItem) {
+  galleryItems.forEach((otherItem) => {
+    if (otherItem !== exceptItem) {
+      otherItem.style.opacity = "0.4";
+    }
+  });
 }
 
 galleryItems.forEach((item) => {
   const action = item.getAttribute("data-action");
   item.addEventListener("mouseenter", () => {
     handleMouseEnter(action);
-
-    galleryItems.forEach((otherItem) => {
-      if (otherItem !== item) {
-        otherItem.style.opacity = "0.4";
-      }
-    });
+    resetGalleryItemOpacity();
+    setGalleryItemOpacity(item);
   });
 });
+
 gallery.forEach((item) => {
   item.addEventListener("mouseleave", () => {
     handleMouseLeave();
+    resetGalleryItemOpacity();
   });
 });
 
-galleryItems.forEach((item) => {
-  item.addEventListener("mouseleave", () => {
-    galleryItems.forEach((otherItem) => {
-      if (otherItem !== item) {
-        otherItem.style.opacity = "1";
-      }
-    });
-  });
-});
+resetGalleryItemOpacity();
