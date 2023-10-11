@@ -20,19 +20,20 @@ function setGalleryImage(imageUrl, transformValue) {
   }, 100);
 }
 
-function handleMouseEnter(action) {
+function handleMouseEnter(action, item) {
   const imageUrl = imagePaths[action];
   if (imageUrl) {
     setGalleryImage(imageUrl, "translateX(3000px)");
+    resetGalleryItemOpacity();
+    setGalleryItemOpacity(item);
   } else {
     handleMouseLeave();
   }
 }
 
 function handleMouseLeave() {
-  animPhotos.style.opacity = "0";
-
   setTimeout(() => {
+    animPhotos.style.opacity = "0";
     animPhotos.style.transform = "translateX(-4000px)";
   }, 100);
 
@@ -40,17 +41,16 @@ function handleMouseLeave() {
     animPhotos.style.opacity = "1";
     animPhotos.style.transform = "translateX(0px)";
   }, 700);
+  resetGalleryItemOpacity();
 }
 
 function resetGalleryItemOpacity() {
-  galleryItems.forEach((item) => {
-    item.style.opacity = "1";
-  });
+  galleryItems.forEach((item) => (item.style.opacity = "1"));
 }
 function setGalleryItemOpacity(exceptItem) {
-  galleryItems.forEach((otherItem) => {
-    if (otherItem !== exceptItem) {
-      otherItem.style.opacity = "0.4";
+  galleryItems.forEach((item) => {
+    if (item !== exceptItem) {
+      item.style.opacity = "0.4";
     }
   });
 }
@@ -58,16 +58,13 @@ function setGalleryItemOpacity(exceptItem) {
 galleryItems.forEach((item) => {
   const action = item.getAttribute("data-action");
   item.addEventListener("mouseenter", () => {
-    handleMouseEnter(action);
-    resetGalleryItemOpacity();
-    setGalleryItemOpacity(item);
+    handleMouseEnter(action, item);
   });
 });
 
 gallery.forEach((item) => {
   item.addEventListener("mouseleave", () => {
     handleMouseLeave();
-    resetGalleryItemOpacity();
   });
 });
 
