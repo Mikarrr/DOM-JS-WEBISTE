@@ -8,8 +8,6 @@ const imagePaths = {
   action2: "../photos/sec_img.jpg",
   action3: "../photos/th_img.jpg",
   action4: "../photos/main_img.jpg",
-  action5: "../photos/sec_img.jpg",
-  action6: "../photos/th_img.jpg",
 };
 
 function setGalleryImage(imageUrl, transformValue) {

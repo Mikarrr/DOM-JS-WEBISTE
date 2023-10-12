@@ -19,15 +19,15 @@ Maintext.forEach((section) => {
     {
       y: 0,
       opacity: 1,
-      stagger: 2,
-      duration: 5,
+      stagger: 3,
+      duration: 3,
       ease: "ease-in",
       scrollTrigger: {
         trigger: section,
         start: "top 80%",
         end: "90% 90%",
         markers: false,
-        scrub: 5,
+        scrub: 3,
       },
     }
   );
@@ -40,15 +40,15 @@ MainContentDescription.forEach((section) => {
     {
       y: 0,
       opacity: 1,
-      stagger: 2,
-      duration: 5,
+      stagger: 3,
+      duration: 3,
       ease: "ease-in-out",
       scrollTrigger: {
         trigger: MainContentIntro,
         start: "110% 60%",
         end: "110% 90%",
         markers: false,
-        scrub: 2.5,
+        scrub: 3,
       },
     }
   );
@@ -61,15 +61,15 @@ MainContentGalleryPTag.forEach((section) => {
     {
       y: 0,
       opacity: 1,
-      stagger: 2,
-      duration: 10,
+      stagger: 3,
+      duration: 3,
       ease: "ease-in",
       scrollTrigger: {
         trigger: MainContentGallery,
         start: "top 80%",
         end: "30% 90%",
         markers: false,
-        scrub: 5,
+        scrub: 3,
       },
     }
   );
@@ -82,15 +82,15 @@ MainContentGalleryGalleryLi.forEach((section) => {
     {
       y: 0,
       opacity: 1,
-      stagger: 2,
-      duration: 5,
+      stagger: 3,
+      duration: 3,
       ease: "ease-in",
       scrollTrigger: {
         trigger: MainContentGallery,
         start: "top 80%",
         end: "80% 90%",
         markers: false,
-        scrub: 5,
+        scrub: 3,
       },
     }
   );

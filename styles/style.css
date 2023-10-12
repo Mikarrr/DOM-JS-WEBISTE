@@ -227,7 +227,7 @@ body {
 
   justify-content: flex-start;
   padding-top: 4em;
-  height: 6400px;
+  height: 6000px;
   width: 100%;
   z-index: 1000;
   transition: all 1s ease-in-out;
@@ -385,6 +385,7 @@ body {
   color: black;
   font-size: 20px;
   margin-bottom: 3em;
+  z-index: 9999;
 }
 .main_content_gallery ul {
   text-align: center;
@@ -398,7 +399,7 @@ body {
 .main_content_gallery ul li a {
   text-decoration: none;
   color: black;
-  font-size: 130px;
+  font-size: 120px;
   opacity: 1;
   transition: opacity 0.4s ease-in-out;
 }
@@ -409,7 +410,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 1000px;
+  height: 750px;
   width: 80%;
   position: absolute;
   z-index: 1;
