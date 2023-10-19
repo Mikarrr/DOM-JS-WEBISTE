@@ -29,20 +29,6 @@ face.addEventListener("click", () => {
 
   text.style.opacity = "0";
   setTimeout(() => {
-    let projectsHTML = `<div class="main_img"></div> <div class="blur"></div><p class="test">Teatr Biuro Podróży podejmuje
-    tematy często niewygodne i niepopularne. Opowiada o wojnie, śmierci i przemocy.
-    Prowokuje widzów do zajęcia stanowiska, opowiedzenia się, wyrażenia pogladów.</p> `;
-    document.querySelector(".main_content").innerHTML = projectsHTML;
-    document.querySelector(".main_content").style.backgroundColor = "none";
-    document.querySelector(".test").style.opacity = "0";
-    document.querySelector(".main_img").style.opacity = "0";
-    document.querySelector(".blur").style.opacity = "0";
-    setTimeout(() => {
-      document.querySelector(".main_content").style.backgroundColor =
-        "var(--color)";
-      document.querySelector(".test").style.opacity = "1";
-      document.querySelector(".main_img").style.opacity = "1";
-      document.querySelector(".blur").style.opacity = "1";
-    }, 300);
+    window.location.href = "../pages/test.html";
   }, 1000);
 });
