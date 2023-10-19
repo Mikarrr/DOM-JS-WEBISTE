@@ -32,22 +32,20 @@ body {
   left: 0;
   width: 100%;
   background-color: var(--color);
-  transition: background-color 1s ease-in-out;
-  z-index: 9997;
+  z-index: 9999;
 }
 
-.navbar img {
-  height: 20px;
-  margin-left: 3em;
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
+.navbar h1 {
+  margin-left: 2em;
+  transition: color 1s ease-in-out;
   position: relative;
-  z-index: 1001;
+  word-spacing: 0.1em;
+  color: var(--background-color);
 }
 
 .list {
   display: flex;
-  gap: 50%;
+  gap: 20%;
   list-style-type: none;
   justify-content: center;
 }
@@ -73,7 +71,6 @@ body {
   border-radius: 3em;
   cursor: pointer;
   transition: all 1s ease-in-out;
-  z-index: 999;
 }
 .theme_button:hover {
   background-color: var(--color);
@@ -107,12 +104,11 @@ body {
     cursor: pointer;
     display: block;
     padding: 0em;
-    z-index: 999;
   }
   .hamburger .line {
     width: 2em;
     height: 0.2em;
-    background: var(--color);
+    background: var(--background-color);
     margin-bottom: 0.3em;
     transition: 1s ease-in-out;
   }
@@ -133,14 +129,17 @@ body {
     height: 900px;
     position: absolute;
     right: 0;
-    top: 0vh;
+    top: 40px;
     flex-direction: column;
     text-align: center;
-    transform: translateY(101%);
+    transform: translateY(100%);
     transition: 0.5s ease-in-out;
     width: 100%;
     gap: 5%;
-    z-index: 998;
+    z-index: 9998;
+  }
+  .navbar ul a {
+    color: var(--color);
   }
   .theme_button {
     justify-self: center;
@@ -178,6 +177,7 @@ body {
 }
 .hover_effect .js-effect p {
   color: var(--secoundary-color);
+  text-align: center;
   font-size: 25px;
 }
 @media (max-width: 700px) {
@@ -298,7 +298,7 @@ body {
   text-align: center;
   font-size: 150px;
   position: relative;
-  z-index: 9999;
+  z-index: 9995;
 }
 .main_img p {
   color: white;

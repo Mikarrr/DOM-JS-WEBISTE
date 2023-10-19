@@ -1,8 +1,4 @@
 let previousColor = null;
-let logoBlack = `<img src="../photos/logo.png" alt="" />`;
-let logoWhite = `<img src="../photos/logoW.png" alt="" />`;
-// Ustawia logo kolor czarny domyślnie
-document.querySelector(".js-logo").innerHTML = logoWhite;
 
 let currentColor = getComputedStyle(document.documentElement).getPropertyValue(
   "--color, --background-color, --secoundary-color"
@@ -33,13 +29,11 @@ themeButton.addEventListener("click", function () {
     );
 
     // Ustawia logo na pełną przejrzystość (widoczność)
-    document.querySelector(".navbar img").style.opacity = "0"; // Ukryj logo
 
     setTimeout(() => {
       // Ustawia logo kolor biały
-      document.querySelector(".js-logo").innerHTML = logoBlack;
+
       currentColor = newColor;
-      document.querySelector(".navbar img").style.opacity = "1"; // Pokaż logo
     }, 1000); // Po upływie 1 sekundy (czas trwania przejścia)
   } else {
     // Jeżeli previousColor nie jest puste, przywraca poprzedni kolor
@@ -55,13 +49,10 @@ themeButton.addEventListener("click", function () {
     // Ustawia logo na pełną przejrzystość (widoczność)
     document.querySelector(".navbar img").style.opacity = "0"; // Ukryj logo
     setTimeout(() => {
-      // Ustawia logo kolor czarny
-      document.querySelector(".js-logo").innerHTML = logoBlack;
       currentColor = previousColor;
 
       // Czyści previousColor, aby można było ponownie zmienić kolor za pierwszym razem
       previousColor = null;
-      document.querySelector(".navbar img").style.opacity = "1"; // Pokaż logo
     }, 1000); // Po upływie 1 sekundy (czas trwania przejścia)
   }
 });
