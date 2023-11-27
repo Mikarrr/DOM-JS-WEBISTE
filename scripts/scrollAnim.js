@@ -46,7 +46,7 @@ Maintext.forEach((section) => {
 MainContentDescription.forEach((section) => {
   gsap.fromTo(
     section,
-    { y: "+=400", opacity: 0 },
+    { y: "+=800", opacity: 0 },
     {
       y: 0,
       opacity: 1,

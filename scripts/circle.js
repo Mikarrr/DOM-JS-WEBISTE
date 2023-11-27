@@ -1,12 +1,12 @@
-const face = document.querySelector(".hover_effect div ");
-const text = document.querySelector(".hover_effect div p");
+const face = document.querySelector(".hover_effect .text ");
+const text = document.querySelector(".hover_effect .text p");
 
 face.addEventListener("click", () => {
-  document.querySelector(".hover_effect div").style.backgroundImage = "none";
+  document.querySelector(".hover_effect .text").style.backgroundImage = "none";
 
   const variablesHoverEffect = [
     { property: "width", value: "100%" },
-    { property: "height", value: "2000px" },
+    { property: "height", value: "100vh" },
     { property: "borderRadius", value: "0" },
     { property: "cursor", value: "default" },
     { property: "animation", value: "none" },
@@ -16,7 +16,7 @@ face.addEventListener("click", () => {
     { property: "display", value: "flex" },
   ];
 
-  const HoverEffectDiv = document.querySelector(".hover_effect div");
+  const HoverEffectDiv = document.querySelector(".hover_effect .text");
   const MainContentDiv = document.querySelector(".main_content");
 
   variablesHoverEffect.forEach((variable) => {
