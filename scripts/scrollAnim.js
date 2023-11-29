@@ -1,7 +1,9 @@
 gsap.registerPlugin(ScrollTrigger);
 
 const MainContentIntro = document.querySelectorAll(".main_content_intro");
+
 const Maintext = document.querySelectorAll(".main_content_intro .main_text");
+
 const MainContentDescription = document.querySelectorAll(
   ".main_content_description"
 );
@@ -22,6 +24,7 @@ const MainContentCommingSoonJsArchives = document.querySelectorAll(
   ".main_content_comming_soon .js-archives"
 );
 const Footer = document.querySelectorAll(".footer");
+
 Maintext.forEach((section) => {
   gsap.fromTo(
     section.children,
@@ -108,18 +111,18 @@ MainContentGalleryGalleryLi.forEach((section) => {
 
 MainContentAnimationContainerMovingText.forEach((section) => {
   gsap.fromTo(
-    section,
-    { x: "+=500", opacity: 0 },
+    section.children,
+    { x: "+=500" },
     {
       x: 0,
-      opacity: 1,
-      stagger: 3,
-      duration: 3,
-      ease: "ease-in",
+
+      stagger: 2,
+      duration: 8,
+      ease: "ease-in-out",
       scrollTrigger: {
-        trigger: MainContentGallery,
-        start: "bottom 80%",
-        end: "bottom 90%",
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
         markers: false,
         scrub: 3,
       },
