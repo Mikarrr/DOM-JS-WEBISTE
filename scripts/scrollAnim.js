@@ -190,3 +190,42 @@ Footer.forEach((section) => {
     }
   );
 });
+
+const MainProjects = document.querySelector(".product_container");
+const divs = gsap.utils.toArray(".product_container .product");
+
+if (window.innerWidth >= 1150) {
+  let scrollTwin = gsap.to(divs, {
+    xPercent: -100 * (divs.length - 4),
+    ease: "none",
+    scrollTrigger: {
+      trigger: MainProjects,
+      pin: true,
+      scrub: 1,
+      end: "+=1920",
+    },
+  });
+
+  divs.forEach((div, index) => {
+    if (index !== 0 && window.innerWidth >= 1150) {
+      let items = div.querySelectorAll(".anim");
+
+      items.forEach((item) => {
+        gsap.from(item, {
+          y: -130,
+          opacity: 0,
+          stagger: 0.5,
+          duration: 1,
+          ease: "power1",
+
+          scrollTrigger: {
+            trigger: div,
+            containerAnimation: scrollTwin,
+            start: "left center",
+            markers: false,
+          },
+        });
+      });
+    }
+  });
+}

@@ -3,6 +3,7 @@
 
 * {
   box-sizing: border-box;
+  cursor: none;
 }
 
 :root {
@@ -20,7 +21,6 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  cursor: none;
 }
 ::-webkit-scrollbar {
   width: 0em;
@@ -74,22 +74,30 @@ body {
   transition: all 0.7s ease-in;
   top: 0;
   left: 0;
-  animation: loaderAnimation 1.8s ease-in-out;
+  animation: loaderAnimation 1.8s ease-in-out forwards; /* Updated animation property */
   overflow: hidden;
   z-index: 99999;
 }
+
 @keyframes loaderAnimation {
   0% {
     transform: translateX(-500px) rotate(0);
+    opacity: 1;
   }
   50% {
     transform: translateX(-500px) rotate(0);
+    opacity: 1;
+  }
+  99% {
+    transform: translateX(3000px) rotate(0);
+    opacity: 1;
   }
   100% {
     transform: translateX(3000px) rotate(0);
-    display: none;
+    opacity: 0;
   }
 }
+
 @media (max-width: 700px) {
   .preloader {
     display: none;
@@ -116,6 +124,7 @@ body {
   word-spacing: 0.2em;
   color: var(--background-color);
   transition: color 1s ease-in-out;
+  width: 20vw;
 }
 .list {
   display: flex;
@@ -127,7 +136,8 @@ body {
   display: flex;
   gap: 2em;
   list-style-type: none;
-  justify-content: center;
+  justify-content: end;
+  width: 20vw;
 }
 .navbar ul a {
   text-decoration: none;
@@ -144,18 +154,24 @@ body {
 .cart_button:hover {
   color: rgb(136, 136, 136);
 }
-.hamburger {
+.icon_ham {
   display: none;
 }
 @media (max-width: 1000px) {
   .navbar h1,
   .theme_button,
-  .hamburger {
+  .hamburger,
+  .list_login {
     position: relative;
     z-index: 10000;
   }
-  .navbar ul li {
+  .navbar .list li {
     font-size: 40px;
+  }
+  .icon_ham {
+    display: flex;
+    justify-content: end;
+    width: 20vw;
   }
   .hamburger {
     display: block;
@@ -163,7 +179,6 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
-    display: block;
   }
   .hamburger .line {
     width: 2em;
@@ -180,7 +195,6 @@ body {
   }
   .list {
     background-color: var(--color);
-
     margin: 0;
     position: absolute;
     left: 0;
@@ -194,6 +208,7 @@ body {
     gap: 2em;
     z-index: 9999;
   }
+
   .list.active {
     transform: translateX(0%);
   }
